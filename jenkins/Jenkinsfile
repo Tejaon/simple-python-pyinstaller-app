@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                worker2 {
+                docker {
                     image 'python:2-alpine'
                 }
             }
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             agent {
-                worker2 {
+                docker {
                     image 'qnib/pytest'
                 }
             }
